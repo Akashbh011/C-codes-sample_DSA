@@ -1,0 +1,31 @@
+que 1 easy
+
+
+List all hidden files under current directory and store in “hidden” file
+
+Ans -> $ ls -a | grep "^\." > hidden
+
+Assign write permission to owner and remove execute permission from
+other for an ordinary file named test by absolute way.
+
+Ans -> chmod u+w,o-x /path/to/test
+
+To create soft and hard link for given file
+
+Ans -> ln -s /path/to/original_file /path/to/soft_link
+	 ln /path/to/original_file /path/to/hard_link
+
+To convert lowercase to upper case of a given file
+
+Ans -> tr '[:lower:]' '[:upper:]' < input_file > output_file
+
+To extract 1st and 10th character of a given file
+
+Ans -> cut -c 1-10 file.txt > outfile
+
+To display how many times lines are repeated in a given file
+
+Ans -> sort input_file | uniq -c
+
+
+

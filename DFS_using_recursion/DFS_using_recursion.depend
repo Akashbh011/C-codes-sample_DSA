@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1680719246 source:d:\akash prev\dfs_using_recursion\main.c
+	<stdio.h>
+	<stdlib.h>
+

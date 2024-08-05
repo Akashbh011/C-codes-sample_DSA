@@ -1,0 +1,205 @@
+FIRST FIT-->
+#include <stdio.h>
+
+void firstFit(int memory[], int blockSize[], int m, int n)
+{
+    int allocation[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        allocation[i] = -1;
+
+        for (int j = 0; j < m; j++)
+        {
+            if (blockSize[j] >= memory[i])
+            {
+                allocation[i] = j;
+                blockSize[j] -= memory[i];
+                break;
+            }
+        }
+    }
+
+    // Print the allocated memory blocks
+    printf("First Fit Allocation:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("Process %d -> Block %d\n", i, allocation[i]);
+    }
+}
+
+int main()
+{
+    int memory[] = {100, 500, 200, 300, 600};
+    int blockSize[] = {212, 417, 112, 426, 54};
+    int n = sizeof(memory) / sizeof(memory[0]);
+    int m = sizeof(blockSize) / sizeof(blockSize[0]);
+
+    firstFit(memory, blockSize, m, n);
+
+    return 0;
+}
+
+
+next fit-->
+
+#include <stdio.h>
+
+void nextFit(int memory[], int blockSize[], int m, int n)
+{
+    int allocation[n];
+    int lastBlock = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        allocation[i] = -1;
+
+        for (int j = lastBlock; j < m; j++)
+        {
+            if (blockSize[j] >= memory[i])
+            {
+                allocation[i] = j;
+                blockSize[j] -= memory[i];
+                lastBlock = j;
+                break;
+            }
+        }
+
+        if (allocation[i] == -1)
+        {
+            for (int j = 0; j < lastBlock; j++)
+            {
+                if (blockSize[j] >= memory[i])
+                {
+                    allocation[i] = j;
+                    blockSize[j] -= memory[i];
+                    lastBlock = j;
+                    break;
+                }
+            }
+        }
+    }
+
+    // Print the allocated memory blocks
+    printf("Next Fit Allocation:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("Process %d -> Block %d\n", i, allocation[i]);
+    }
+}
+
+int main()
+{
+    int memory[] = {100, 500, 200, 300, 600};
+    int blockSize[] = {212, 417, 112, 426, 54};
+    int n = sizeof(memory) / sizeof(memory[0]);
+    int m = sizeof(blockSize) / sizeof(blockSize[0]);
+
+    nextFit(memory, blockSize, m, n);
+
+    return 0;
+}
+
+
+BEST FIT-->
+
+#include <stdio.h>
+
+void bestFit(int memory[], int blockSize[], int m, int n)
+{
+    int allocation[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        allocation[i] = -1;
+        int bestFitBlock = -1;
+
+        for (int j = 0; j < m; j++)
+        {
+            if (blockSize[j] >= memory[i])
+            {
+                if (bestFitBlock == -1 || blockSize[j] < blockSize[bestFitBlock])
+                {
+                    bestFitBlock = j;
+                }
+            }
+        }
+
+        if (bestFitBlock != -1)
+        {
+            allocation[i] = bestFitBlock;
+            blockSize[bestFitBlock] -= memory[i];
+        }
+    }
+
+    // Print the allocated memory blocks
+    printf("Best Fit Allocation:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("Process %d -> Block %d\n", i, allocation[i]);
+    }
+}
+
+int main()
+{
+    int memory[] = {100, 500, 200, 300, 600};
+    int blockSize[] = {212, 417, 112, 426, 54};
+    int n = sizeof(memory) / sizeof(memory[0]);
+    int m = sizeof(blockSize) / sizeof(blockSize[0]);
+
+    bestFit(memory, blockSize, m, n);
+
+    return 0;
+}
+
+WORST FIT-->
+#include <stdio.h>
+
+void worstFit(int memory[], int blockSize[], int m, int n)
+{
+    int allocation[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        allocation[i] = -1;
+        int worstFitBlock = -1;
+
+        for (int j = 0; j < m; j++)
+        {
+            if (blockSize[j] >= memory[i])
+            {
+                if (worstFitBlock == -1 || blockSize[j] > blockSize[worstFitBlock])
+                {
+                    worstFitBlock = j;
+                }
+            }
+        }
+
+        if (worstFitBlock != -1)
+        {
+            allocation[i] = worstFitBlock;
+            blockSize[worstFitBlock] -= memory[i];
+        }
+    }
+
+    // Print the allocated memory blocks
+    printf("Worst Fit Allocation:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("Process %d -> Block %d\n", i, allocation[i]);
+    }
+}
+
+int main()
+{
+    int memory[] = {100, 500, 200, 300, 600};
+    int blockSize[] = {212, 417, 112, 426, 54};
+    int n = sizeof(memory) / sizeof(memory[0]);
+    int m = sizeof(blockSize) / sizeof(blockSize[0]);
+
+    worstFit(memory, blockSize, m, n);
+
+    return 0;
+}
+
+

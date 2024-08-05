@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1683192534 source:d:\akash prev\threaded binary tree insertion\stack_palindrom_\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

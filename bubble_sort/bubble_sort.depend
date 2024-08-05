@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1679338170 source:d:\akash prev\bubble_sort\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1679338410 source:d:\akash prev\bubble_sort\untitled_bubble.c
+	<stdio.h>
+

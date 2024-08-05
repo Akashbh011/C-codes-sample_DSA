@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1679737261 source:d:\akash prev\creation in bst\insertion\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+

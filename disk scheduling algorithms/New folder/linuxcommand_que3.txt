@@ -1,0 +1,26 @@
+To redirect the output of cp command to a file named outfile. Use this
+as an input file for remaining commands
+
+Ans -> cp input_file outfile
+
+To select the lines in a file which has 4 letter words in that line and
+redirect the output to the file named list
+
+Ans -> grep -E '\b\w{4}\b' input_file > list
+
+Assign write permission to owner and remove read permission from
+group user for an ordinary file named test by relative way
+
+Ans -> chmod u+w,g-r test
+
+Create an alias named ls that always lists all the files including hidden
+files.
+
+Ans -> alias ls='ls -a'
+
+Count the number of words in the list file.
+
+Ans -> wc -w list
+
+
+

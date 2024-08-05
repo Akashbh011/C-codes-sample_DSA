@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1678728907 source:d:\akash prev\singly linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1678725400 source:d:\akash prev\singly linked list\imsertion and deletion.c
+	<stdio.h>
+	<stdlib.h>
+

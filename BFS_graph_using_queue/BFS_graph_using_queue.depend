@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1680719089 source:d:\akash prev\bfs_graph_using_queue\main.c
+	<stdio.h>
+	<stdlib.h>
+
